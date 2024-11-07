@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="view/styles.css">  <!-- Link to your CSS file -->
+    <script src="https://kit.fontawesome.com/a3cf2330ae.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <i class='fa fa-bars'></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-home"></i>
+        <i class="fas fa-th-large"></i>
+        <i class="fa fa-bullhorn"></i>
+        <i class="fas fa-shopping-cart"></i>
+        <i class="far fa-clock"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-bell"></i>
+        <i class="far fa-thumbs-up"></i>
+
+
+
+
+    </div>
+    <div class="content">
+        <div class="header">
+            <div class="header-left">
+                <h1>CINEMA.<span class="design">MOVIES</span></h1>
+            </div>
+            <div class="header-center">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" class="search-bar" placeholder="Search for name, category, relat">
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="button1">
+                    <div class="user-menu"><i class='fas fa-wallet'></i>Euro <i class="fas fa-chevron-down" style='font-size:10px'></i>
+                    </div>
+                </div>
+                <div class="button1">
+                    <button style='font-size:24px'><i class='far fa-bell'></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="categories-title-container">
+            <div class="categories-title-left-container">
+                <h3><i class='fa fa-th-large'style='font-size:24px; margin-right: 10px;'></i>
+                 Categories</h3> 
+            </div>
+            <div class="categories-title-right-container">
+                <i class='fa fa-th' style='font-size:36px; margin-right: 16px;'></i>
+                <i class='fa fa-bars' style='font-size:36px'></i>
+            </div>
+        </div>
+        <div class="categories-container">
+            <button class="category-arrow" id="prev-arrow">&lt;</button>
+            <div class="categories">
+                <button class="category">Network</button>
+                <button class="category">Sports</button>
+                <button class="category">Educational</button>
+                <button class="category">Musician</button>
+                <button class="category">Deportes</button>
+                <button class="category">Gastronomy</button>
+            </div>
+            <button class="category-arrow" id="next-arrow">&gt;</button>
+        </div>
+
+        <div class="video-grid">
+          <!-- Existing video cards -->
+          <div class="video-card">
+              <img src="video1.jpg" alt="Video 1">
+              <div class="info">
+                  <div class="tag">Tag 1</div>
+                  <h3 class="title">Video Title 1</h3>
+                  <p class="duration">05:22</p>
+                  <div class="details">
+                      <i class="fas fa-user"></i> User 1
+                      <i class="fas fa-eye"></i> 100 views
+                  </div>
+              </div>
+          </div>
+          <!-- ... more existing video cards ... -->
+          <div class="video-card">
+            <img src="video1.jpg" alt="Video 1">
+            <div class="info">
+                <div class="tag">Tag 1</div>
+                <h3 class="title">Video Title 1</h3>
+                <p class="duration">05:22</p>
+                <div class="details">
+                    <i class="fas fa-user"></i> User 1
+                    <i class="fas fa-eye"></i> 100 views
+                </div>
+            </div>
+        </div><div class="video-card">
+          <img src="video1.jpg" alt="Video 1">
+          <div class="info">
+              <div class="tag">Tag 1</div>
+              <h3 class="title">Video Title 1</h3>
+              <p class="duration">05:22</p>
+              <div class="details">
+                  <i class="fas fa-user"></i> User 1
+                  <i class="fas fa-eye"></i> 100 views
+              </div>
+          </div>
+      </div><div class="video-card">
+        <img src="video1.jpg" alt="Video 1">
+        <div class="info">
+            <div class="tag">Tag 1</div>
+            <h3 class="title">Video Title 1</h3>
+            <p class="duration">05:22</p>
+            <div class="details">
+                <i class="fas fa-user"></i> User 1
+                <i class="fas fa-eye"></i> 100 views
+            </div>
+        </div>
+    </div><div class="video-card">
+      <img src="video1.jpg" alt="Video 1">
+      <div class="info">
+          <div class="tag">Tag 1</div>
+          <h3 class="title">Video Title 1</h3>
+          <p class="duration">05:22</p>
+          <div class="details">
+              <i class="fas fa-user"></i> User 1
+              <i class="fas fa-eye"></i> 100 views
+          </div>
+      </div>
+  </div><div class="video-card">
+    <img src="video1.jpg" alt="Video 1">
+    <div class="info">
+        <div class="tag">Tag 1</div>
+        <h3 class="title">Video Title 1</h3>
+        <p class="duration">05:22</p>
+        <div class="details">
+            <i class="fas fa-user"></i> User 1
+            <i class="fas fa-eye"></i> 100 views
+        </div>
+    </div>
+</div><div class="video-card">
+  <img src="video1.jpg" alt="Video 1">
+  <div class="info">
+      <div class="tag">Tag 1</div>
+      <h3 class="title">Video Title 1</h3>
+      <p class="duration">05:22</p>
+      <div class="details">
+          <i class="fas fa-user"></i> User 1
+          <i class="fas fa-eye"></i> 100 views
+      </div>
+  </div>
+</div><div class="video-card">
+  <img src="video1.jpg" alt="Video 1">
+  <div class="info">
+      <div class="tag">Tag 1</div>
+      <h3 class="title">Video Title 1</h3>
+      <p class="duration">05:22</p>
+      <div class="details">
+          <i class="fas fa-user"></i> User 1
+          <i class="fas fa-eye"></i> 100 views
+      </div>
+  </div>
+</div><div class="video-card">
+  <img src="video1.jpg" alt="Video 1">
+  <div class="info">
+      <div class="tag">Tag 1</div>
+      <h3 class="title">Video Title 1</h3>
+      <p class="duration">05:22</p>
+      <div class="details">
+          <i class="fas fa-user"></i> User 1
+          <i class="fas fa-eye"></i> 100 views
+      </div>
+  </div>
+</div>
+      </div>
+    </div>
+</body>
+</html>
