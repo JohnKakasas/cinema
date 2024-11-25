@@ -1,0 +1,1394 @@
+:root {
+  --primary-color: #C11C2C;
+  --background-color: #0E0E0E;
+  --text-color: #FFFFFF;
+}
+* {box-sizing: border-box;}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+}
+/*  HEADER  **************************************************************************************************************/
+.header {
+  background-color: #1A1C1E;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between; /* Space out left, center, and right */
+  align-items: center;
+  padding: 20px;
+  top: 0px;
+}
+
+.header h1 {
+  font-size: 2rem; /* Increased font size for prominence */
+  font-weight: 700; /* Bold weight for emphasis */
+  margin: 0; /* Remove default margin */
+}
+
+.header h2 {
+  font-size: 1.5rem; /* Subheading size */
+  font-weight: 600; /* Semi-bold weight */
+  margin: 10px 0; /* Margin for spacing */
+}
+
+.header h3 {
+  font-size: 1.25rem; /* Smaller heading size */
+  font-weight: 500; /* Medium weight */
+  margin: 8px 0; /* Margin for spacing */
+}
+
+
+/* Left Section Styling */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 200px; /* Reduced to fit better */
+  flex: 1; /* Let it grow, but not excessively */
+}
+
+/* Right Section Styling */
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-right: 20px; /* Reduced for balance */
+  flex: 1;
+}
+
+/* Center Section Styling */
+.header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2; /* Take up more space compared to left/right */
+}
+
+/* Search Container Styling */
+.search-container {
+  background-color: #0E0E0E;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 0 20px; /* Centered without extreme margins */
+}
+
+.search-container i {
+  margin-right: 10px; /* Space between icon and input */
+  color: #b3b3b3; /* Icon color */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.search-container i:hover {
+  color: var(--primary-color); /* Change color on hover */
+}
+
+.search-bar {
+  background: transparent;
+  width: 500px; /* Adjust width as needed */
+  border: none;
+  color: #fff;
+  flex: 1; /* Allow input to grow */
+  font-size: 20px; /* Font size for input */
+  outline: none; /* Remove default outline */
+  padding: 8px; /* Add padding for better touch target */
+  border-radius: 4px; /* Rounded corners for input */
+}
+
+/*  SIDEBAR  **************************************************************************************************************/
+.sidebar {
+  background-color: #1A1C1E;
+  width: 100px;
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+
+}
+
+.sidebar-text {
+  margin-left: 10px; /* Space between icon and text */
+  color: #b3b3b3; /* Text color */
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+.sidebar-text.visible {
+  display: inline;
+}
+
+.video-card.visible {
+  display: block;
+}
+
+.sidebar i {
+
+  font-size: 24px;
+  color: #b3b3b3;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.sidebar :hover i {
+    color: var(--primary-color); /* Use CSS variable */
+}
+.sidebar .button1 {
+  margin-bottom: 35px;
+}
+
+
+/*  CONTENT  **************************************************************************************************************/
+.content {
+  flex: 1 0 auto;
+  margin-left: 100px;
+  padding: 20px;
+}
+
+.design {
+  color: #C11C2C;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+/*  CATEGORIES  **************************************************************************************************************/
+.categories {
+  display: flex;
+  justify-content: space-between; /* Align items to the start */
+  flex-wrap:nowrap; /* Allow items to wrap to the next line */
+  margin: 20px 0; /* Add some margin for spacing */
+  width: 100%;
+  gap: 0px;
+  white-space: nowrap;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: hidden; /* Prevent vertical overflow */
+}
+
+.categories-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px 20px; 
+  height: 40px; 
+}
+
+.categories-title-left-container {
+  margin-right: 50px; 
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  font-size: 2rem;
+}
+
+.categories-title-right-container {
+  font-size: 145px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+}
+
+.categories-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  cursor: grab;
+  margin: 20px 0;
+  padding: 0 40px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.categories::-webkit-scrollbar {
+  display: none;
+}
+
+.categories.dragging {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.category {
+  margin: 0 5px; /* Add horizontal spacing between buttons */
+  padding: 10px 20px; /* Add padding for better touch targets */
+  background-color: #C11C2C; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  flex: 1; /* Allow buttons to grow and fill the available space */
+  min-width: 150px; /* Set a minimum width for buttons */
+  text-align: center; /* Center text inside buttons */
+}
+
+.category:hover {
+  background-color: #C11C2C;
+}
+
+.category.active {
+  background-color: #a10f1a; /* Active button color */
+}
+
+.category-arrow {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  outline: none;
+  position: absolute;
+  z-index: 10;
+  padding: 10px;
+}
+
+.category-arrow i {
+  font-size: 2rem;
+}
+
+.category-arrow:hover {
+  transform: scale(1.1);
+}
+
+#prev-arrow {
+  left: 10px;
+}
+
+#next-arrow {
+  right: 10px;
+}
+
+/*  MOVIES  **************************************************************************************************************/
+.video-grid {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 20px; /* Space between cards */
+  justify-content: flex-start; /* Align items to the left */
+}
+
+.video-card.list-view {
+  flex: 1 1 100%; /* Full width for list view */
+  max-width: none; /* Remove max width for list view */
+  height: 200px; /* Set a fixed height for the card */
+  flex-direction: row; /* Arrange children in a row */
+  margin-bottom: 420px;
+}
+
+.video-card.list-view img {
+
+  object-fit: cover; /* Cover the area without stretching */
+}
+
+.video-card.list-view .info {
+  padding: 10px; /* Add padding for the text area */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack text vertically */
+  justify-content: center; /* Center the text vertically */
+  flex: 1; /* Allow the info section to grow */
+}
+
+.video-card .description {
+  display: none; /* Hide description by default */
+}
+
+.video-card.list-view .description {
+  display: block; /* Show description in list view */
+}
+
+.video-card {
+  flex: 1 1 200px; /* Default size for grid view */
+  max-width: 300px; /* Set a maximum width for video cards */
+  transition: all 0.3s ease; /* Smooth transition for size change */
+}
+
+.video-card img {
+  width: 275px;
+  height: 400px;
+  cursor: pointer;
+  border-radius: 10px; /* Slightly smaller border radius */
+}
+
+.video-card:focus {
+  outline: 2px solid #FFFFFF; /* Add focus outline for accessibility */
+}
+
+
+.video-card .info {
+  padding: 10px; /* Add padding for the text area */
+  flex: 1; /* Allow the info section to grow */
+}
+
+
+.info {
+  padding: 10px;
+  color: #b3b3b3;
+}
+
+.tag {
+  background-color: #C11C2C;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  padding: 2px 5px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 5px 0;
+}
+
+.date, .duration {
+  font-size: 0.9rem; /* Font size for date and duration */
+  color: #aaa; /* Color for date and duration */
+  margin: 5px 0; /* Margin for spacing */
+}
+.duration {
+  margin-left: 13px;
+}
+
+.details {
+  display:block;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #757575;
+}
+
+.details i {
+  margin-right: 5px;
+}
+
+
+.video-info {
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  border-radius: 5px;
+}
+
+.trailer-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.trailer-container iframe {
+  width: 800px;
+  height: 500px;
+}
+
+.duration, .views {
+  font-size: 0.875rem; /* Use rem for scalability */
+}
+
+.camera-model {
+
+  color: #FFFFFF;
+  font-size: 16px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 80%;
+  max-width: 800px;
+  background-color: #1E1E1E;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #FFFFFF;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.close:focus {
+  outline: 2px solid #FFFFFF; /* Add focus outline for accessibility */
+}
+
+/* pending reservations  ****************************************************************************************************************************************************/
+
+/* Flex container for side-by-side layout */
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between the two sections */
+  justify-content: space-between;
+}
+
+/* Reservations container styling */
+
+
+/* Cards for pending reservations */
+.reservation-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Reservation card styling */
+.reservation-card {
+  background-color: #1A1C1E;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for reservation card */
+.reservation-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Styling for buttons */
+.approve-btn, .reject-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Approve button styling */
+.approve-btn {
+  background-color: #0E0E0E;
+  color: white;
+  border: none;
+}
+
+.approve-btn:hover {
+  background-color: #0E0E0E;
+}
+
+/* Reject button styling */
+.reject-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.reject-btn:hover {
+  background-color: #d32f2f;
+}
+
+
+
+/* Remove reserv  ****************************************************************************************************************************************************/
+
+.remove-btn {
+  background-color: #ff4d4d; /* Red for remove */
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+
+
+
+/* Reservation ****************************************************************************************************************************************************/
+
+
+.reservation {
+  background-color: #1A1C1E;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.reservation p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.reservation strong {
+  font-weight: bold;
+}
+
+
+/* Buttons ****************************************************************************************************************************************************/
+
+
+.read-more {
+  background-color: #C11C2C; /* Red background */
+  border: none;
+  color: white;
+  padding: 8px 16px;  /* Reduced padding to make the button smaller */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;  /* Smaller font size */
+  margin: 2px 1px;  /* Reduced margin for less space around the button */
+  cursor: pointer;
+  border-radius: 5px;  /* Slightly smaller border radius */
+  margin-left: 20px;
+}
+
+.read-more:hover {
+  background-color: #630000; /* Darker green on hover */
+}
+
+.close-button {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background-color: #C11C2C; /* Red background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem; /* Optional: Adjust font size */
+}
+
+.close-button:hover {
+  background-color: #a10f1a; /* Darker red on hover */
+}
+
+.button {
+  background-color: var(--background-color); /* Keep this value */
+  border: none;
+  border-radius: 12px;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.button, .button1, .button2, .button3, .button4, .button5, .button6 {
+  background-color: #0E0E0E;
+  border: none;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button1 {
+  font-size: 25px;
+  height: 48px;
+  width: 48px;
+}
+
+.button1:hover {
+  border: #a10f1a;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.button2 {
+  font-size: 15px;
+  gap: 10px;
+  height: 48px;
+  width: 130px;
+  border: #a10f1a;
+}
+
+.button2:hover {
+  border: #a10f1a;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.button3 {
+  background-color: #222222;
+  border: #2c2c2c;
+  border-width: 2px;
+  border-style: solid;
+  font-size: 20px;
+  height: 80px;
+  width: 195px;
+  margin: 10px;
+}
+
+.button4 {
+  background-color: #C11C2C;
+  margin-top: 25px;
+  border-radius: 5px;
+  font-size: 10px;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button5 {
+  background-color: #1A1C1E;
+  border: none;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 20px;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button5:hover {
+  color: #C11C2C;
+}
+
+.button6 {
+  background-color: #1A1C1E;
+  border: none;
+  border-radius: 1px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 20px;
+  height: 60px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:none;
+}
+
+.button6:hover {
+  background-color: #121212; /* Darken the button block on hover */
+}
+
+.button6 i {
+  margin-top: 5px;
+}
+
+.button6 i.active {
+  color: #C11C2C; /* Red color for the active icon */
+}
+
+.custom-button:hover {
+  background-color: #C11C2C;
+  transform: scale(1.1);
+}
+
+.custom-button i {
+  line-height: 1;
+}
+
+/* Style for the active sidebar button */
+.sidebar .button6.active i {
+  color: var(--primary-color); /* Color for the active icon */
+}
+
+.sidebar .button6.active {
+  background-color: var(--primary-color); /* Background color for the active button */
+  color: white; /* Text color for the active button */
+  i {
+    color: #ffffff;
+  }
+}
+
+/* Hover effect for other buttons */
+.sidebar .button6:hover:not(.active) i {
+  color: var(--primary-color); /* Use primary color on hover for non-active icons */
+}
+
+/* NEWS *****************************************************************************************************************/
+.news-cards-container {
+  display: flex;
+  flex-direction: column; /* Stack the cards in a vertical list */
+  gap: 30px; /* Space between each card */
+  padding: 20px;
+}
+
+.news-card {
+  display: flex;
+  background-color: #1A1C1E;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Make the card take full width */
+  transition: transform 0.2s;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  height: 100%;            /* Ensure the card takes full height */
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-card-image {
+  width: 100%;
+  height: 180px; /* Adjust the height as needed */
+  object-fit: cover;
+}
+
+.news-card-content {
+  padding: 15px;
+  color: var(--text-color, #fff); /* Use your text color variable */
+}
+
+.news-card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.news-card-description {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #ccc; /* Lighter color for the description */
+}
+
+.news-card-image {
+  width: 250px; /* Larger image size */
+  height: 200px; /* Adjust the height for bigger images */
+  object-fit: cover;
+}
+
+.news-card-content {
+  padding: 20px;
+  color: var(--text-color, #fff); /* Use your text color variable */
+  flex: 1; /* Allow content to take up remaining space */
+}
+
+.news-card-title {
+  font-size: 24px; /* Larger title */
+  margin-bottom: 15px;
+}
+
+.news-card-description {
+  font-size: 16px; /* Larger description text */
+  margin-bottom: 20px;
+  color: #ccc; /* Lighter color for the description */
+}
+
+/* Footer Styles **********************************************************************************************************/
+.footer {
+  flex-shrink: 0; /* Prevent footer from shrinking */
+  background-color: #1A1C1E; /* Footer background color */
+  color: #b3b3b3; /* Footer text color */
+  padding: 20px; /* Add padding for footer */
+  text-align: center; /* Center text in footer */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  flex-direction: column; /* Stack items vertically */
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.footer-section {
+  margin: 20px; /* Keep original margin */
+  flex: 1;
+  min-width: 200px; /* Keep original minimum width */
+}
+
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 15px; /* Keep original margin */
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 0.9rem; /* Keep original font size */
+  line-height: 1.6; /* Keep original line height */
+}
+
+.footer-section a {
+  color: #b3b3b3;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #C11C2C;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  color: #757575;
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    bottom: 0;
+    top: auto;
+
+  }
+
+  .content {
+    margin-left: 0;
+    margin-bottom: 60px; /* Ensure footer is above the sidebar */
+    padding-bottom: 20px; /* Reduce padding as we now have margin */
+  }
+  
+  .footer {
+    margin-left: 0;
+    margin-bottom: 60px; /* Ensure footer is above the sidebar */
+    padding: 20px;
+  }
+  
+  .footer-section {
+    flex: 1 1 100%;
+    margin: 10px 0;
+  }
+
+  .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for smaller screens */
+}
+}
+
+@media (max-width: 768px) {
+
+  .category {
+    min-width: 120px; /* Adjust minimum width for smaller screens */
+    flex: 1 1 120px; /* Adjust minimum width for smaller screens */
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+  }
+
+  .header-left, .header-center, .header-right {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start; /* Align items to the start */
+    margin: 10px 0; /* Add vertical margin */
+  }
+
+  .header-center {
+    justify-content: flex-start; /* Align center items to the start */
+  }
+
+  .header h1 {
+    font-size: 1.5rem; /* Adjust size for smaller screens */
+  }
+
+  .header h2 {
+    font-size: 1.25rem; /* Adjust size for smaller screens */
+  }
+
+  .header h3 {
+    font-size: 1rem; /* Adjust size for smaller screens */
+  }
+}
+
+/* Focus styles for accessibility */
+.header h1:focus, .header h2:focus, .header h3:focus {
+  outline: 2px solid var(--primary-color); /* Add focus outline */
+
+
+    .video-card {
+        max-width: 100%;
+    }
+
+  .modal-content {
+      width: 90%; /* Adjust modal width */
+  }
+
+  .duration,
+  .views {
+      font-size: 12px; /* Smaller font size for mobile */
+  }
+
+  .camera-model {
+      font-size: 14px; /* Smaller font size for mobile */
+  }
+
+}
+
+
+@media (max-width: 480px) {
+  .close {
+      font-size: 24px; /* Smaller close button on mobile */
+  }
+  .category {
+    flex: 1 1 100px; /* Further adjust minimum width for mobile screens */
+    min-width: 100px; /* Further adjust minimum width for mobile screens */
+    padding: 6px 12px; /* Further adjust padding for mobile screens */
+  }
+}
+/* HOME PAGE **********************************************************************************************************/
+/* Section Styling */
+.section {
+  margin-top: 30px; /* Add top margin to separate sections */
+  padding: 20px;
+  background-color: #1A1C1E; /* Dark background for content sections */
+  border-radius: 8px; /* Rounded corners for the sections */
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #b3b3b3; /* Lighter color for description text */
+}
+
+.section-content {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color); /* Primary red color for section titles */
+}
+
+/* General Text Styling */
+.section p, .section-description, .section-content {
+  line-height: 1.6;
+  color: #b3b3b3;
+  font-size: 1rem; /* Standard font size for paragraphs */
+}
+
+/* Accent Styling for Active Headers or Elements */
+.section-header {
+  color: var(--primary-color); /* Red color for main headers */
+  font-weight: bold;
+}
+
+
+.home-cards-container {
+  display: flex;
+  flex-direction: column; /* Stack the cards in a vertical list */
+  gap: 30px; /* Space between each card */
+  width: 100%; /* Full width of the content container */
+  max-width: 1200px; /* Optional: maximum width for large screens */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px 0; /* Vertical padding */
+}
+
+.home-card {
+  display: flex;
+  background-color: #1A1C1E;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Make the card take full height of its container */
+  transition: transform 0.2s;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  margin: 0 auto; /* Center each card horizontally */
+}
+
+.home-card:hover {
+  transform: translateY(-5px);
+}
+
+.home-card-image {
+  width: 250px; /* Adjust image size */
+  height: 200px; /* Adjust height */
+  object-fit: cover;
+  margin-right: 20px; /* Space between image and content */
+}
+
+.home-card-content {
+  padding: 20px;
+  color: var(--text-color, #fff); /* Use your text color variable */
+  flex: 1; /* Allow content to take up remaining space */
+  display: flex; /* Ensure content is displayed properly */
+  flex-direction: column; /* Stack the title, description, and link vertically */
+  justify-content: space-between; /* Ensure content is spaced out evenly */
+}
+
+.home-card-title {
+  font-size: 24px; /* Larger title */
+  margin-bottom: 15px;
+}
+
+.home-card-description {
+  font-size: 16px; /* Larger description text */
+  margin-bottom: 20px;
+  color: #ccc; /* Lighter color for the description */
+}
+
+/*  Upload form  **********************************************************************************************************/
+
+/* Form container styling */
+.form-container {
+  background-color: #1A1C1E;
+  border-radius: 12px;
+  border: #2c2c2c;
+  border-width: 2px;
+  border-style: solid;
+  padding: 30px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form header styling */
+h2 {
+  text-align: center;
+  font-size: 1.8em;
+  color: #fff;
+  margin-bottom: 30px;
+
+}
+
+/* Form group (label + input) styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Input and select styling */
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Styling for the textarea */
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Focus effect for inputs */
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #C11C2C;
+  outline: none;
+}
+
+/* Submit button styling */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4c51bf;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the submit button */
+.submit-btn:hover {
+  background-color: #C11C2C;
+}
+
+/* Style for file input (hidden text in file upload field) */
+.form-group input[type="file"] {
+  padding: 10px;
+}
+
+/* Make sure the submit button doesn't break the layout on mobile */
+@media (max-width: 600px) {
+  .form-container {
+      padding: 15px;
+  }
+
+  h2 {
+      font-size: 1.6em;
+  }
+
+  .form-group input[type="text"],
+  .form-group select,
+  .form-group textarea {
+      padding: 10px;
+  }
+
+  .submit-btn {
+      padding: 12px;
+  }
+}
+
+
+
+/* LOGIN STYLES **********************************************************************************************************/
+
+.form-toggle {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn.active {
+  background-color: #C11C2C; /* Highlight active button */
+}
+
+.toggle-btn:hover {
+  background-color: #555;
+}
+
+.form-content {
+  display: none; /* Hide both forms by default */
+  flex-direction: column;
+}
+
+.form-content.active {
+  display: flex; /* Show the active form */
+}
+
+.form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-submit {
+  background-color: #C11C2C;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.form-submit:hover {
+  background-color: #C11C2C;
+}
+
+.form-switch {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.form-switch span {
+  color: #C11C2C;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Flex container to arrange the form and reservations side by side */
+.dashboard-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between the two sections */
+  flex-wrap: wrap; /* Ensure they stack on smaller screens */
+}
+
+/* Reservations container styling */
+.reservations-container {
+  flex: 1 1 45%; /* Take up 45% of the container's width */
+  background-color: #1A1C1E;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards for pending reservations */
+.reservation-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Reservation card styling */
+.reservation-card {
+  background-color: #0E0E0E;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for reservation card */
+.reservation-card:hover {
+  transform: translateY(-10px);
+  border: #a10f1a;
+  border-width: 2px;
+  border-style: solid;
+}
+
+/* Movie title styling */
+.movie-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* Reservation details styling */
+.reservation-details {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* Action buttons styling */
+.reservation-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styling for the Approve button */
+.approve-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for Approve button */
+.approve-btn:hover {
+  background-color: #45a049;
+}
+
+/* Styling for the Reject button */
+.reject-btn {
+  background-color: #f44336; /* Red */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for Reject button */
+.reject-btn:hover {
+  background-color: #d32f2f;
+}
+
+
+
+
+
+
+
+
+
+/* Toast Notification Styles */
+.toast {
+  visibility: hidden;
+  max-width: 50%;
+  margin-left: -125px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+/* Show the toast */
+.toast.show {
+  visibility: visible;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+/* Animation for fade in and out */
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
