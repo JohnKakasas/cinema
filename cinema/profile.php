@@ -98,7 +98,7 @@ $result = $stmt->get_result();
 
 
 
-<div class="content">
+
     <h2>Your Pending Reservations</h2>
 
     <?php
