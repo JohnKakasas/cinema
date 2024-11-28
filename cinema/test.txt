@@ -1,0 +1,19 @@
+movie 1:
+
+Movie Name: SMALL THINGS LIKE THESE
+Category & Type: DRAMA
+Thumbnail: "C:\xampp\htdocs\demo\cinema\view\img\TEST\STLT.JPG" *EDIT*
+Trailer URL: https://www.youtube.com/embed/z4tTowQhQ6s?si=Mta-9um7cI31Yl3q
+Duration: 98'
+Release Date (Year): 2024
+Description: In 1985 devoted father Bill Furlong discovers disturbing secrets kept by the local convent and uncovers shocking truths of his own.
+
+movie 2:
+
+Movie Name: THE SUBSTANCE
+Category & Type: HORROR
+Thumbnail: "C:\xampp\htdocs\demo\cinema\view\img\TEST\TSBC.JPG" *EDIT*
+Trailer URL: https://www.youtube.com/embed/hTDEaUIymj8?si=VT8M0uYUcldY8N4E
+Duration: 141'
+Release Date (Year): 2024
+Description: A fading celebrity takes a black-market drug: a cell-replicating substance that temporarily creates a younger, better version of herself.
